@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'font_style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,28 +39,42 @@ class MyApp extends StatelessWidget {
         ),
         body: SafeArea(
           child: Container(
-            margin: EdgeInsets.all(15.0),
-            padding: EdgeInsets.only(left: 0, top: 100.0, right: 0, bottom: 0),
+            margin: EdgeInsets.only(left: 23.0, top: 0, right: 23.0, bottom: 0),
+            padding: EdgeInsets.only(left: 0, top: 0, right: 0, bottom: 0),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
             ),
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Image(
-                  image: AssetImage('assets/images/wibu.png'),
-                  height: 200,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('assets/images/wibu.png'),
+                      height: 200,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.0, bottom: 10.0),
+                      child: Text("Ananda Affan Fattahila", style: mainHeader),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          constraints: BoxConstraints(maxWidth: 300),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0)),
+                          child: Text(
+                            "Hello i'm a Software Engineer and Agile Enthusiast guys, Welcome to my project to learn flutter",
+                            textAlign: TextAlign.center,
+                            style: subHeader,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                Text(
-                  "Ananda Affan Fattahila",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "Hello i'm a Software Engineer and Agile Enthusiast guys, Welcome to my project to learn flutter",
-                  textAlign: TextAlign.center,
-                )
               ],
             ),
           ),
